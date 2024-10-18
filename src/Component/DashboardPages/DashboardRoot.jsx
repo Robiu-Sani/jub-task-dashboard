@@ -9,7 +9,7 @@ export default function DashboardRoot() {
       </div>
       <div className="w-[calc(100%-40px)] mr-5 ">
         <div className="w-full h-[65px] flex justify-between mb-2  border-b items-center"></div>
-        <div className="w-full">
+        <div className="w-full h-[calc(100vh-65px)] overflow-y-auto noneScroll">
           <Outlet />
         </div>
       </div>
