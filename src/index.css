@@ -1,6 +1,9 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+* {
+  transition: 0.5s;
+}
 
 .noneScroll::-webkit-scrollbar {
   display: none !important;

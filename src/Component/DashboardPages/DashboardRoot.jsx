@@ -3,16 +3,31 @@ import DashboardNav from "./DashboardNav";
 import { VscThreeBars } from "react-icons/vsc";
 import { IoMdNotificationsOutline } from "react-icons/io";
 import { IoSearch } from "react-icons/io5";
+import { RxCrossCircled } from "react-icons/rx";
+import { useState } from "react";
 
 export default function DashboardRoot() {
+  const [CallNav, setCallNav] = useState(false);
+
   return (
-    <div className="w-full flex justify-between gap-5">
-      <div className=" min-w-[230px] ">
+    <div className={`w-full flex justify-between gap-5`}>
+      <div
+        className={`min-w-[230px] ${
+          CallNav ? "-left-[100%]" : "left-0"
+        }  absolute md:static z-50`}
+      >
+        <RxCrossCircled
+          onClick={() => setCallNav(!CallNav)}
+          className="block md:hidden text-white absolute top-2 right-2"
+        />
         <DashboardNav />
       </div>
       <div className="w-[calc(100%-40px)] mr-5 ">
         <div className="w-full h-[65px] flex justify-between mb-2  border-b items-center">
-          <VscThreeBars className="p-1 cursor-pointer block md:hidden" />
+          <VscThreeBars
+            onClick={() => setCallNav(!CallNav)}
+            className="p-1 cursor-pointer block md:hidden"
+          />
           <div className="hidded md:flex gap-3">
             <p className="text-gray-500">Invoices</p>
             <p className="text-gray-500">/</p>
